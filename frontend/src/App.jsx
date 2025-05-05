@@ -25,7 +25,7 @@ import UserAnalytics from '@pages/user/analytics/UserAnalytics';
 import QuizAreaAdmin from '@pages/admin/allQuiz/QuizArea';
 import QuizBuild from '@pages/admin/buildQuiz/QuizBuild';
 import AllStudents from '@pages/admin/allStudents/AllStudents'
-import AssignToStudents from '@pages/admin/assignToStudents/AssignToStudents'
+import AssignToStudents from '@pages/admin/AssignToStudents/AssignToStudents'
 import Adminanalytics from '@pages/admin/analytics/AdminAnalytics';
 import UpdateProfile from '@pages/UpdateProfile';
 
