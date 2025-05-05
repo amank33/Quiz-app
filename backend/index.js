@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 // app.use(cors())
 
 app.use(cors({
-    origin: 'https://quiz-app-mern-stack-flame.vercel.app/',
+    origin: 'https://quiz-app-mern-stack-flame.vercel.app',
     credentials: true
 }))
 const port = process.env.PORT
