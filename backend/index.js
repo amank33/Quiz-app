@@ -15,12 +15,12 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+// app.use(cors())
 
-// app.use(cors({
-//     origin: 'http://localhost:5173',
-//     credentials: true
-// }))
+app.use(cors({
+    origin: 'https://quiz-app-mern-stack-flame.vercel.app/',
+    credentials: true
+}))
 const port = process.env.PORT
 app.listen(port, () => {
     console.log('Our server is running on port:', port)
