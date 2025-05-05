@@ -1,6 +1,5 @@
 ## Live Demo
 
-
 # QuizApp
 
 QuizApp is a web-based application for creating, managing, and taking quizzes. It is built using React, Tailwind CSS, and Node.js.
@@ -47,12 +46,14 @@ QuizApp is a web-based application for creating, managing, and taking quizzes. I
 ### Steps
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd project-quizApp
    ```
 
 2. Install dependencies for both frontend and backend:
+
    ```bash
    cd frontend
    npm install
@@ -63,28 +64,39 @@ QuizApp is a web-based application for creating, managing, and taking quizzes. I
 3. Configure environment variables:
    - Create a `.env` file in the `backend` folder with the required variables (e.g., database URL, email credentials).
 
-   for backend-
-   MONGO_URI = mongodb+srv://amank:123@cluster0.z5rkc. mongodb.net/quizapp-db
-   PORT=4000
-   JWT_SECRET= 1234567890
-   JWT_EXPIRY= 1d
-   CLIENT_URL=localhost:5173
+### Create a `.env` file in both the `backend` and `frontend` folders with the required variables.
 
-# EMail
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USER = 'mukeshrani.aman@gmail.com'
-EMAIL_PASS = 'cxhw fwmy ffpp igna'
-EMAIL_FROM = 'mukeshrani.aman@gmail.com'
+---
 
+#### ✅ Frontend (`.env` in the root of the frontend folder):
 
-for frontend-
+```
 VITE_API_BASE_URL=http://localhost:4000
 VITE_API_KEY=1234567890
 VITE_API_EXPIRY=1d
+```
 
+---
+
+#### ✅ Backend (`.env` in the backend folder):
+
+```
+MONGO_URI=mongodb+srv://amank:123@cluster0.z5rkc.mongodb.net/quizapp-db
+PORT=4000
+JWT_SECRET=1234567890
+JWT_EXPIRY=1d
+CLIENT_URL=localhost:5173
+
+# Email configuration
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=mukeshrani.aman@gmail.com
+EMAIL_PASS=cxhw fwmy ffpp igna
+EMAIL_FROM=mukeshrani.aman@gmail.com
+```
 
 4. Start the development servers:
+
    - Backend:
      ```bash
      cd backend
@@ -115,7 +127,5 @@ VITE_API_EXPIRY=1d
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
-
-
 
 If you have any questions or feedback, send an email at [mukeshrani.aman@gmail.com](mailto:mukeshrani.aman@gmail.com?subject=Tailwind+React+QuizApp).
