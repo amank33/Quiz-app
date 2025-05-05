@@ -1,0 +1,221 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  
+}
+
+aside{
+  position:fixed;
+  left:0;
+  top:0;
+  background: yellow;
+  color:black;
+  width:50px;
+  height:100vh;
+  padding:10px;
+  transition: 0.5s ease-in-out;
+} 
+
+a{
+  text-decoration: none;
+  color:inherit;
+  display:flex;
+  align-items: center;
+}
+
+.logo{
+  height:50px;
+  margin:0 0 50px 0;
+  position:relative;
+}
+
+.menu-icon{
+  position:absolute;
+  right:-50px;
+  top:0;
+  width:30px;
+  border-radius:30px;
+  font-size:20px;
+  padding:1px;
+  background:yellow;
+  text-align:center;
+  cursor:pointer;
+
+}
+
+.menu-icon .fa-x{
+  display: none;
+}
+
+/* menu + icon */
+.logo a{
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+.logo a i{
+ width:35px;
+ border-radius:50%;
+ text-align:center;
+}
+.logo a span{
+  width:0;
+  overflow:hidden;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  margin:0 0 0 20px;
+  transition:0.5s;
+
+}
+
+/* menu items  */
+.side-menu li{
+  list-style:none;
+  overflow:hidden;
+  border-radius:10px;
+  padding:5px 4px;
+  margin:20px auto;
+  text-transform:capitalize;
+  transition: 0.5s;
+}
+.side-menu-nav-item__span{
+  margin-left: 1rem;
+}
+.nav-item__a{
+  margin-bottom: 1rem;
+}
+li a{
+  position:relative;
+  height:10px;
+}
+li a i{
+  margin-right:20px;
+  font-size:20px;
+  width:25px;
+  text-align:center;
+}
+
+li a span{
+  width:0;
+  overflow:hidden;
+  transition: 0.5s;
+
+}
+.fa-chevron-right{
+  position: absolute;
+  right:0;
+  width:0;
+  overflow:hidden;
+  transition:0.5s;
+}
+
+.sub-menu{
+  width:80%;
+  margin:0 0 0 25px;
+  overflow: hidden;
+  max-height:0;
+  transition:0.5s;
+
+}
+
+.sub-menu li{
+  padding:5px 10px;
+  font-size:15px;
+  margin:4px auto;
+  font-weight: 200;
+}
+.sub-menu li a{
+  position: initial;
+  height:100%;
+  display:initial;
+
+}
+
+/* log out section */
+ul.logout{
+  margin:50px 0 0 0;
+}
+aside.expand .nav-item__span{ 
+  width:105px;
+}
+.nav-item__span{
+  margin-left: 1rem;
+}
+/* other section */
+section{
+  width:calc(100% - 400px);
+  margin:50px 70px;
+  transition: 0.5s;
+}
+/* aside */
+aside.expand{
+  width:250px;
+  left:0;
+}
+aside.expand ~ section {
+  margin: 50px 300px;
+}
+aside.expand + * .content-section {
+  margin: 50px 300px;
+}
+aside.expand + * .content-section,
+aside.expand ~ .content-section {
+  margin: 50px 300px;
+}
+aside.expand ~ .parent-container .content-section {
+  margin: 50px 300px;
+}
+/* aside.expand .menu-icon>.fa-x{
+ display:initial;
+} */
+aside.expand .menu-icon>.fa-bars{
+  display:none;
+}
+
+/* menu text */
+aside.expand .menu-icon__span{
+  width:150px;
+}
+
+/* expanding home text */
+aside.expand .side-menu-nav-item__span{ 
+  width:105px;
+}
+/* aside.expand .fa-chevron-right{
+  width:25px;
+} */
+
+/* active class */
+li.active{
+  background:white;
+  padding: 0.5rem;
+
+}
+/* li.active .when-active{
+  display:block;
+}
+li.active .when-inactive{
+  display:none;
+}
+li .when-active{
+  display:block;
+}
+li .when-inactive{
+  display:none;
+} */
+
+li.active .sub-menu{
+  max-height:300px;
+}
+li.active .when-inactive{
+  transform: rotate(90deg);
+}
+.visible {
+  display: inline;
+}
+.hidden {
+  display: none;
+}

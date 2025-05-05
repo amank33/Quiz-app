@@ -1,0 +1,23 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.grid > div {
+    flex: 1 1 calc(50% - 1.5rem);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .grid > div {
+        flex: 1 1 calc(100% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid > div {
+        flex: 1 1 100%;
+    }
+}
