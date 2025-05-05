@@ -1,5 +1,8 @@
 ## Live Demo
 
+Frontend on Vercel- https://quiz-app-mern-stack-flame.vercel.app
+Backend on Render- https://quiz-app-1mt1.onrender.com
+
 # QuizApp
 
 QuizApp is a web-based application for creating, managing, and taking quizzes. It is built using React, Tailwind CSS, and Node.js.
