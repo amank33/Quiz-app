@@ -37,7 +37,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
     setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     setLoginError({ emailError: '', passwordError: '' });
 
     if (loginData.email === '' || loginData.password === '') {
@@ -65,8 +65,9 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
     
     console.log(userAuth, 'userAuth');
     debugger;
-     getLoginData1(loginData).then((flag) => {
-       debugger;
+    let flag= await getLoginData1(loginData);
+    debugger;
+    if(flag){
       if (flag) {
         setUserAuth(flag.accessToken);
         setUserRole(flag.user.role);
@@ -75,7 +76,19 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
       } else {
         toast.error('Could not login!');
       }
-    });
+    }
+
+    //  getLoginData1(loginData).then((flag) => {
+    //    debugger;
+    //   if (flag) {
+    //     setUserAuth(flag.accessToken);
+    //     setUserRole(flag.user.role);
+    //     toast.success('Logged in successfully!');
+    //     navigate("/dashboard"); // Redirect to home page after successful login
+    //   } else {
+    //     toast.error('Could not login!');
+    //   }
+    // });
   };
 
   async function getLoginData1(values) {
@@ -89,6 +102,8 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
         // withCredentials: true, // for cookies
   
       })
+    
+      debugger;
     
       const data = response.data;
       storeInSession("user", JSON.stringify(data));
