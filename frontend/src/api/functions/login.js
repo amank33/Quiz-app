@@ -9,6 +9,7 @@ import axios from 'axios';
 
 export const userSignIn = async (user) => {
   try {
+    debugger;
     const { data } = await axiosInstance.post(`${endPoints.user.signin}`, user)
     return data
   } catch (error) {
