@@ -72,7 +72,9 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
         setUserAuth(flag.accessToken);
         setUserRole(flag.user.role);
         toast.success('Logged in successfully!');
-        navigate("/dashboard"); // Redirect to home page after successful login
+        sessionStorage.setItem('user', JSON.stringify(flag));
+        //navigate("/dashboard"); // Redirect to home page after successful login
+        
       } else {
         toast.error('Could not login!');
       }
@@ -106,7 +108,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
       debugger;
     
       const data = response.data;
-      sessionStorage.setItem('user', JSON.stringify(data));
+      
       //storeInSession("user", JSON.stringify(data));
   
       if (data.status) {
@@ -241,7 +243,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
 
         <button
           type='button'
-          onClick={handleSubmit}
+          onClick={()=>{handleSubmit();navigate('/dashboard')}}
           className='mt-6 w-full rounded-full bg-emerald-500 px-4 py-2 text-white transition-colors hover:bg-emerald-600 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:outline-none'
         >
           Sign In
