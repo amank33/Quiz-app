@@ -64,6 +64,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
     }
     
     console.log(userAuth, 'userAuth');
+    debugger;
      getLoginData(loginData).then((flag) => {
        debugger;
       if (flag) {
