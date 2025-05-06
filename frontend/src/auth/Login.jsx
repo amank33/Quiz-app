@@ -65,7 +65,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
     
     console.log(userAuth, 'userAuth');
     debugger;
-     getLoginData(loginData).then((flag) => {
+     getLoginData1(loginData).then((flag) => {
        debugger;
       if (flag) {
         setUserAuth(flag.accessToken);
@@ -77,6 +77,49 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
       }
     });
   };
+
+  async function getLoginData1(values) {
+    try {
+     
+      debugger;
+      let baseUrl = String(import.meta.env.VITE_API_BASE_URL);
+      console.log("domain");
+      const response = await axios.post(`${baseUrl}/api/auth/login`, values, {
+        headers: { 'Content-Type': 'application/json' },
+        // withCredentials: true, // for cookies
+  
+      })
+    
+      const data = response.data;
+      storeInSession("user", JSON.stringify(data));
+  
+      if (data.status) {
+        toast1({
+          title: "Login Success!",
+          description: data.message,
+      })
+      return data;
+  
+      } else {
+        toast1({
+          title: 'Login Failure!',
+          description: data.message || 'Something went wrong.',
+          variant: 'destructive',
+        });
+      return false;
+      }
+      
+  
+    } catch (error) {
+      toast1({
+        title: 'Login Failure!',
+        description: error?.response?.data?.message || 'Login failed due to a server error.',
+        variant: 'destructive',
+      });
+        return false
+    }
+    
+  }
 
   const handleForgotPassword = () => {
     setIsModalOpen(true);
