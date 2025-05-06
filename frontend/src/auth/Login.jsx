@@ -106,7 +106,8 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
       debugger;
     
       const data = response.data;
-      storeInSession("user", JSON.stringify(data));
+      sessionStorage.setItem('user', JSON.stringify(data));
+      //storeInSession("user", JSON.stringify(data));
   
       if (data.status) {
         toast1({
@@ -116,6 +117,7 @@ function Login({ toggleCount, setVariant, localStorageData, setLocalStorageData 
       return data;
   
       } else {
+
         toast1({
           title: 'Login Failure!',
           description: data.message || 'Something went wrong.',
